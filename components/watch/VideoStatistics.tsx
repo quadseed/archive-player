@@ -11,7 +11,7 @@ function VideoStatistics() {
   return (
     <div className='border-b-2'>
       <div className='flex items-center m-1 text-sm md:text-xl font-base'>{testData.title}</div>
-      <div className='flex space-x-20 md:space-x-60 space-y-1'>
+      <div className='flex space-x-20 md:space-x-60 space-y-1 text-sm'>
 
         <div className='flex items-center space-x-5 my-1'>
           <p>{testData.views.toLocaleString()} views</p>
