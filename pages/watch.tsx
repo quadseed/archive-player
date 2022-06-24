@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import Comments from '../components/Comments';
-import Description from '../components/Description';
+import Comments from '../components/watch/Comments';
+import Description from '../components/watch/Description';
 import Header from '../components/Header'
-import LiveChat from '../components/LiveChat';
-import Player from '../components/Player';
+import LiveChat from '../components/watch/LiveChat';
+import Player from '../components/watch/Player';
 import { testData } from '../components/test';
-import VideoStatistics from '../components/VideoStatistics';
+import VideoStatistics from '../components/watch/VideoStatistics';
 
 
 const Watch: NextPage = () => {

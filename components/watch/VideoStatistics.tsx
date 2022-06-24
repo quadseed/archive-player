@@ -1,7 +1,7 @@
 import React from 'react'
-import { testData } from './test'
+import { testData } from '../test'
 import { ThumbUpIcon, ThumbDownIcon } from '@heroicons/react/outline';
-import IconBuilder from './IconBuilder';
+import IconBuilder from '../IconBuilder';
 
 function VideoStatistics() {
 
