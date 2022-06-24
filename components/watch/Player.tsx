@@ -1,4 +1,3 @@
-import React from 'react'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -12,10 +11,11 @@ function Player({url, thumbnailUrl}: Links) {
     <div className='mx-16 my-8'>
           <ReactPlayer 
             width="100%"
-            height="auto"
+            height="100%"
             url={url}
             controls
-            volume={0.02}
+            playing
+            volume={0.04}
             playbackRate={1}
           />
     </div>
