@@ -22,7 +22,7 @@ const Watch: NextPage = () => {
 
         <div className='md:col-span-3 space-y-5'>
           <Player url={testData.url} thumbnailUrl={testData.thumbnailUrl} />
-          <div className='py-4 px-32'>
+          <div className='px-10 py-2 md:px-32 md:py-4'>
             <VideoStatistics />
             <Description />
             <Comments />

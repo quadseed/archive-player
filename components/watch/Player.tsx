@@ -8,7 +8,7 @@ type Links = {
 
 function Player({url, thumbnailUrl}: Links) {
   return (
-    <div className='mx-16 my-8'>
+    <div className='mx-2 my-1 md:mx-16 md:my-8'>
           <ReactPlayer 
             width="100%"
             height="100%"
