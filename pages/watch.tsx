@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Comments from '../components/watch/Comments';
 import Description from '../components/watch/Description';
 import Header from '../components/Header'
-import LiveChat from '../components/watch/LiveChat';
+import ChatReplay from '../components/watch/ChatReplay';
 import Player from '../components/watch/Player';
 import { testData } from '../components/test';
 import VideoStatistics from '../components/watch/VideoStatistics';
@@ -29,7 +29,7 @@ const Watch: NextPage = () => {
           </div>
         </div>
 
-        <LiveChat />
+        <ChatReplay />
       </div>
     </div>
   )
