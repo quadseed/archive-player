@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchIcon } from '@heroicons/react/outline'
 
-function NavigationBar() {
+function Header() {
   return (
     <div className='sticky top-0 flex bg-white shadow-sm px-96 py-3'>
       <form className='flex flex-1 items-center space-x-2 border rounded-full py-1 bg-gray-100'>
@@ -13,4 +13,4 @@ function NavigationBar() {
   )
 }
 
-export default NavigationBar
+export default Header
