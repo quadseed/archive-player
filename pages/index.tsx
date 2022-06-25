@@ -9,6 +9,7 @@ const Home: NextPage = () => {
         <title>Archive-Player</title>
       </Head>
       <Header />
+      Home
     </div>
   )
 }
