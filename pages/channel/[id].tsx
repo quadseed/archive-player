@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { testData } from '../../components/test'
 import Header from '../../components/Header'
 import { AdjustmentsIcon } from '@heroicons/react/outline'
@@ -11,27 +11,20 @@ type PathParams = {
 }
 
 type PageProps = {
+  channelId: string
   channelName: string;
 }
 
-export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
-  return {
-    paths: [
-      { params: { id: testData.channelId } }
-    ],
-    fallback: false
-  }
-}
-
-export const getStaticProps: GetStaticProps<PageProps> = async context => {
+export const getServerSideProps: GetServerSideProps<PageProps> = async context => {
   const { id } = context.params as PathParams
   const props: PageProps = {
+    channelId: id,
     channelName: testData.channelName,
   }
   return { props }
 }
 
-const ChannelPage: React.FC<PageProps> = ({ channelName }: PageProps) => {
+const ChannelPage: React.FC<PageProps> = ({ channelId, channelName }: PageProps) => {
   return (
     <div>
       <Head>
@@ -45,15 +38,16 @@ const ChannelPage: React.FC<PageProps> = ({ channelName }: PageProps) => {
           <div className='px-3'>
             <p className='text-xl font-bold'>{testData.channelName}</p>
             <p className='text-lg'>{testData.subscriber}</p>
+            <p>{channelId}</p>
           </div>
         </div>
 
-        <div className='mx-28'>
+        <div className='sm:mx-8 md:mx-11 xl:mx-20 2xl:mx-28'>
           <div className='flex items-center mx-5 my-5'>
           <p className='flex items-center px-4 space-x-2 select-none hover:cursor-pointer active:bg-slate-200 active:rounded-full'><AdjustmentsIcon className='h-6 w-6 text-gray-500' />Sort</p>
           </div>
           
-          <div className='mx-5 grid sm:grid-col-2 md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-8'>
+          <div className='mx-5 grid sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-8'>
 
             {testData.items.map((item) => (
               <div className='mx-4 my-2 hover:cursor-pointer select-none'>
