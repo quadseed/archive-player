@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Header() {
   return (
-    <div className='sticky top-0 flex bg-white shadow-md sm:px-14 md:px-32 xl:px-96 py-3 md:space-x-5 ld:space-x-20'>
+    <div className='sticky top-0 z-10 flex bg-white shadow-md sm:px-14 md:px-32 xl:px-96 py-3 md:space-x-5 ld:space-x-20'>
       <div className='flex items-center font-bold text-xl underline text-indigo-500 pr-3'>
       <Link href="/">Archive-Player</Link>
       </div>
