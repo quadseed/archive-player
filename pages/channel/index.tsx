@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
+import Header from '../../components/Header';
 
 
 const Index: NextPage = () => {
@@ -7,8 +8,10 @@ const Index: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Archive-Player</title>
+        <title>Channel List - Archive-Player</title>
       </Head>
+      
+      <Header />
       Index
     </div>
   )
