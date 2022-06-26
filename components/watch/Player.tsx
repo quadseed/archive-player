@@ -8,7 +8,7 @@ type Links = {
 
 function Player({url, thumbnailUrl}: Links) {
   return (
-    <div className='mx-2 my-1 md:mx-16 md:my-8'>
+    <div className='group relative mx-2 my-1 md:mx-16 md:my-8'>
           <ReactPlayer 
             width="100%"
             height="100%"
@@ -18,6 +18,7 @@ function Player({url, thumbnailUrl}: Links) {
             volume={0.04}
             playbackRate={1}
           />
+          <div className='absolute bottom-0 bg-black text-white hidden group-hover:block transition ease-in-out duration-700'>Controller Components</div>
     </div>
   )
 }
