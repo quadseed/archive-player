@@ -15,6 +15,7 @@ function Player({url, thumbnailUrl}: Links) {
             url={url}
             controls
             playing
+            playsinline={true}
             volume={0.04}
             playbackRate={1}
           />
