@@ -18,9 +18,9 @@ const Watch: NextPage = () => {
       </Head>
 
       <Header />
-      <div className='grid md:grid-cols-4 sm:grid-cols-1 h-screen'>
+      <div className='xl:flex items-start'>
 
-        <div className='md:col-span-3 space-y-5'>
+        <div className='xl:w-3/4 space-y-5'>
           <Player url={testData.url} thumbnailUrl={testData.thumbnailUrl} />
           <div className='px-10 py-2 md:px-32 md:py-4'>
             <VideoStatistics />
@@ -29,7 +29,9 @@ const Watch: NextPage = () => {
           </div>
         </div>
 
-        <ChatReplay />
+        <div className='sticky top-12'>
+          <ChatReplay />
+        </div>
       </div>
     </div>
   )

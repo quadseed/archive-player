@@ -2,8 +2,8 @@ import React from 'react'
 
 function ChatReplay() {
   return (
-    <div className='flex md:col-span-1 h-5/6 mx-5 my-8 border-8 bg-gray-200'>
-      Chat Replay
+    <div className='mx-2 my-8 h-full border-8 bg-gray-200'>
+      Chat Replay is here
     </div>
   )
 }
