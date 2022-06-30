@@ -22,17 +22,18 @@ const Watch: NextPage = () => {
 
         <div className='xl:w-3/4 space-y-5'>
           <Player url={testData.url} thumbnailUrl={testData.thumbnailUrl} />
-          <div className='px-10 py-2 lg:px-32 md:py-4'>
-            <VideoStatistics />
-            <Description />
-            <Comments />
-          </div>
         </div>
 
         <div className='sticky top-12'>
           <ChatReplay />
         </div>
       </div>
+
+      <div className='xl:w-3/4 px-10 py-2 lg:px-32 md:py-4'>
+            <VideoStatistics />
+            <Description />
+            <Comments />
+          </div>
     </div>
   )
 }
