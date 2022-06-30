@@ -4,8 +4,6 @@ import { ThumbUpIcon, ThumbDownIcon } from '@heroicons/react/outline';
 import IconBuilder from '../Utils';
 
 function VideoStatistics() {
-
-  const dislike = (testData as any).dislike ?? "Dislike";
   
   return (
     <div className='border-b-2'>
@@ -22,7 +20,7 @@ function VideoStatistics() {
             <IconBuilder Icon={ThumbUpIcon} title={testData.like} />
             </div>
             <div className='text-red-500'>
-            <IconBuilder Icon={ThumbDownIcon} title={dislike} />
+            <IconBuilder Icon={ThumbDownIcon} title={(testData as any).dislike ?? "Dislike"} />
             </div>
           </div>
       </div>
