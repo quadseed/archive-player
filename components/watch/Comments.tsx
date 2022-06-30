@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { AdjustmentsIcon } from '@heroicons/react/outline'
+import { AdjustmentsIcon, ThumbUpIcon } from '@heroicons/react/outline'
+import { HeartIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { testData } from '../test'
-import { MultiLineString } from '../Utils'
+import IconBuilder, { MultiLineString } from '../Utils'
 
 function Comments() {
   
@@ -14,8 +15,8 @@ function Comments() {
       </div>
 
       {testData.comments.map((item) => (
-      <div>
-        <div className='flex items-center px-2 py-1 space-y-4'>
+      <div key={item.id}>
+        <div className='flex px-2 py-1 ml-2 mb-4'>
           <Link href={"/channel/" + item.author_id}><img className='h-10 w-10 rounded-full hover:cursor-pointer' src={item.author_thumbnail} /></Link>
           <div className='items-center space-y-1 pl-1'>
             <div className='flex items-center space-x-1 px-3'>
@@ -25,6 +26,18 @@ function Comments() {
 
             <div className='text-sm pl-3'>
               <MultiLineString body={item.text} />
+            </div>
+
+            <div className='flex items-center space-x-2 pl-2 pt-1 select-none'>
+              <div className='text-gray-500'>
+                <IconBuilder Icon={ThumbUpIcon} title={(item as any).like_count ?? "Like"}/>
+              </div>
+              {item.is_favorited && (
+                <div className='relative hover:cursor-pointer rounded-full active:bg-slate-200'>
+                  <img className='h-4 w-4' src={testData.icon} />
+                  <HeartIcon className='absolute top-2 left-2 h-3 w-3 text-red-500' />
+                </div>
+              )}
             </div>
           </div>
           
