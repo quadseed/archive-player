@@ -4,8 +4,12 @@ import { HeartIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { testData } from '../test'
 import IconBuilder, { MultiLineString } from '../Utils'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
 function Comments() {
+
+  dayjs.extend(relativeTime)
   
   return (
     <div>
@@ -20,8 +24,8 @@ function Comments() {
           <Link href={"/channel/" + item.author_id}><img className='h-10 w-10 rounded-full hover:cursor-pointer' src={item.author_thumbnail} /></Link>
           <div className='items-center space-y-1 pl-1'>
             <div className='flex items-center space-x-1 px-3'>
-              <p className='text-sm font-bold hover:underline hover:cursor-pointer'><Link href={"/channel/" + item.author_id}>{item.author}</Link></p>
-              <p className='text-xs'>{item.time_text}</p>
+              <p className={'text-sm font-bold hover:underline hover:cursor-pointer ' + (item.author_is_uploader ? 'bg-gray-500 rounded-xl px-2 text-gray-50' : '')}><Link href={"/channel/" + item.author_id}>{item.author}</Link></p>
+              <p className='text-xs'>{dayjs.unix(item.timestamp).fromNow()}</p>
             </div>
 
             <div className='text-sm pl-3'>
