@@ -17,7 +17,7 @@ function VideoStatistics() {
 
         <div className='flex items-center pl-10 space-x-5 space-y-1'>
             <div className='text-green-600'>
-            <IconBuilder Icon={ThumbUpIcon} title={testData.like} />
+            <IconBuilder Icon={ThumbUpIcon} title={testData.like.toLocaleString()} />
             </div>
             <div className='text-red-500'>
             <IconBuilder Icon={ThumbDownIcon} title={(testData as any).dislike ?? "Dislike"} />
