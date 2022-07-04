@@ -15,7 +15,7 @@ type PageProps = {
   channelName: string;
 }
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async context => {
+export const getServerSideProps: GetServerSideProps<PageProps> = async (context) => {
   const { id } = context.params as PathParams
   const props: PageProps = {
     channelId: id,
@@ -51,7 +51,7 @@ const ChannelPage: React.FC<PageProps> = ({ channelId, channelName }: PageProps)
 
             {testData.items.map((item) => (
               <div className='mx-4 my-2 hover:cursor-pointer select-none'>
-                <Link href={item.videoUrl}>
+                <Link href={"/watch?v=" + item.videoId}>
                   <div className='mb-2'>
                     <div className='mb-2 relative'>
                       <img className='h-auto w-auto justify-center' src={item.thumbnailUrl} />
