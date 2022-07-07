@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Comments from '../components/watch/Comments';
 import Description from '../components/watch/Description';
@@ -8,8 +8,42 @@ import Player from '../components/watch/Player';
 import { testData } from '../components/test';
 import VideoStatistics from '../components/watch/VideoStatistics';
 
+type VideoProps = {
+  video_id: string,
+  title: string,
+  thumbnail: string,
+  description: string,
+  channelName: string,
+  channel_id: string,
+  view_count: number,
+  was_live: boolean,
+  like_count: number
+}
 
-const Watch: NextPage = () => {
+export const getServerSideProps: GetServerSideProps<VideoProps> = async (context) => {
+  const videoId = context.query.v;
+  if (videoId) {
+    console.log(videoId)
+  } else {
+    console.log("none")
+  }
+
+  const props: VideoProps = {
+    video_id: testData.videoId,
+    title: testData.title,
+    thumbnail: testData.thumbnailUrl,
+    description: testData.description,
+    channelName: testData.channelName,
+    channel_id: testData.channelId,
+    view_count: testData.views,
+    was_live: false,
+    like_count: testData.like
+  }
+
+  return { props }
+}
+
+const Watch = (props: VideoProps) => {
 
   return (
     <div>
